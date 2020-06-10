@@ -67,7 +67,7 @@
     <article id="post-如何搭建你的第一篇博客" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/06/10/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%BD%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="article-date">
-  <time datetime="2020-06-10T12:23:22.000Z" itemprop="datePublished">2020-06-10</time>
+  <time datetime="2020-06-10T13:35:29.690Z" itemprop="datePublished">2020-06-10</time>
 </a>
     
   </div>
@@ -86,11 +86,60 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>#如何搭建你的第一篇博客</p>
+<blockquote>
+<p>tips:    曹润泽是傻逼</p>
+</blockquote>
+<hr>
+<h3 id="安装node-js"><a href="#安装node-js" class="headerlink" title="安装node.js"></a>安装node.js</h3><p>到官网自己装，会安装nodejs和npm包管理器两个部分</p>
+<p>考虑到速度问题，再利用npm安装cnpm（国内淘宝mirror）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install cnpm</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<h3 id="HEXO"><a href="#HEXO" class="headerlink" title="HEXO"></a>HEXO</h3><p>用下面命令进行hexo全局安装，全局安装的作用是可以在命令行里使用hexo</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<p>hexo-cli是实现没手都能搭建博客的关键</p>
+<p>接着随便找个地方新建一个文件夹blog，用于存放blog项目</p>
+<p>cd到你自己建的文件夹，输入以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo hexo init</span><br></pre></td></tr></table></figure>
+
+<p>这个命令有点像git init，生成一个仓库，但是他会自动clone一个blog项目到本地</p>
+<p>启动博客，Start可以直接用s代替</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo Start #不用的话记得用ctrl+c关掉</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<h3 id="创建你的第一篇博客"><a href="#创建你的第一篇博客" class="headerlink" title="创建你的第一篇博客"></a>创建你的第一篇博客</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hero n &quot;我的第一篇博客&quot;</span><br></pre></td></tr></table></figure>
+
+<p>这样就会在你的/blog/source/_posts目录下生成一个.md文件，对这个文件修改就可以改动博客内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Hexo clean #刷新当前内容</span><br><span class="line">hexo Generate #缩写为hexo g用来重新生成内容</span><br><span class="line">hexo s #重新启动</span><br></pre></td></tr></table></figure>
+
+<p>你会发现现在你有两篇博客了，其中一篇就是你自己写的</p>
+<hr>
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><p>到你的github上，新建一个仓库，<strong>名字一定要是你的github名字.github.io</strong></p>
+<p>![image-20200610204610621](/Users/a1466055840/Library/Application Support/typora-user-images/image-20200610204610621.png)</p>
+<p>然后回到命令行，下载一个东西</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install --deployer-git</span><br></pre></td></tr></table></figure>
+
+<p>然后修改blog目录下的_config.yml文件，在最底部改成这样，然后退出：</p>
+<p>![image-20200610204808153](/Users/a1466055840/Library/Application Support/typora-user-images/image-20200610204808153.png)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d #hexo Deployer的简写</span><br></pre></td></tr></table></figure>
+
+<p>下面让你干啥你就干啥，如果报下面的错：</p>
+<p>![image-20200610205437837](/Users/a1466055840/Library/Application Support/typora-user-images/image-20200610205437837.png)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email &quot;you@example.com&quot; #github的email</span><br><span class="line">git config --global user.name &quot;Your Name&quot; #瞎写就行</span><br></pre></td></tr></table></figure>
+
+<p>就OK了</p>
+<p>访问 <em>https://你的github名字.github.io</em> 就可以看到你的博客啦，不行的话刷新一下</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/06/10/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%BD%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" data-id="ckb9bviuy000182l8fes70ppf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/06/10/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%BD%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" data-id="ckb9ec8o60001qnl8hybgezif" class="article-share-link">Share</a>
       
       
     </footer>
@@ -139,7 +188,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/06/10/hello-world/" data-id="ckb9bviur000082l83wv1d8lp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/06/10/hello-world/" data-id="ckb9ec8nz0000qnl817w99hxe" class="article-share-link">Share</a>
       
       
     </footer>
